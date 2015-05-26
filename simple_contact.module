@@ -2,7 +2,11 @@
 
 function simple_contact_form_alter(&$form, &$form_state, $form_id){
     if ($form_id == 'contact_site_form') {
-        $form['subject']['#access'] = 0;
-        $form['copy']['#access'] = 0;
+        // print '<pre>';
+        // print_r($form);
+        // print '</pre>';
+        $form['subject']['#default_value'] = 'Feedback';
+        $form['message']['#default_value'] = 'Your opinion does not matter to our mega-corporation.';
+        $form['copy']['#default_value'] = 1;
     }
 }
